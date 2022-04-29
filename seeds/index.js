@@ -1,6 +1,6 @@
-const seedUsers = require('./user-seeds');
-const seedPosts = require('./post-seeds');
-const seedComments = require('./comment-seeds');
+const seedUsers = require('./user-seed');
+const seedPosts = require('./posts-seed');
+const seedComments = require('./comment-seed');
 const seedExpenses = require('./Expense-seed');
 const seedIncomes = require('./income-seed');
 
