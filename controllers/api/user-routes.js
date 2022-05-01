@@ -65,7 +65,7 @@ router.post('/logut', (req,res) => {
         });
     }
     else {
-        jres.status (404).end();
+        res.status(404).end();
     }
 });
 
