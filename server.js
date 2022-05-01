@@ -3,7 +3,7 @@
 const path = require('path');
 const express = require('express');
 const session = require('express-session');
-const exphbs = require('express-handlebars');
+const hbs = require('express-handlebars');
 
 // set up the app and deployment port
 
@@ -33,11 +33,11 @@ app.use(session(sess));
 
 //importing helpers for formatting purposes
 
-const helpers = require('./utils/helpers');
+//const helpers = require('./utils/helpers');
 
 // creating a handlebars instance and feeding in the helpers to use in templates
 
-const hbs = exphbs.create({ helpers });
+//const hbs = exphbs.create({ helpers });
 
 // telling the app to use handlebars as the templating/response engine
 
