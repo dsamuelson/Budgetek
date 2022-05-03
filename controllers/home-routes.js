@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const res = require('express/lib/response');
 const { User,  Income, Expense } = require('../models');
 
 //Get all info for homepage if user is logged in
@@ -64,5 +65,19 @@ router.get('/user', async (req, res) => {
       res.status(500).json(err);
     }
   });
+
+  router.get('/', (req, res) => {
+    if(req.session.logged_in) {
+      res.redirect('/user');
+      return;
+    }
+    res.render('login');
+  });
+
+  router.get('/signup', async (req, res) => {
+    res.render('signup');
+  });
+
+  
 
   module.exports = router;
