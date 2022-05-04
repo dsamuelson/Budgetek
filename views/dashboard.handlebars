@@ -1,1 +1,30 @@
-<p>test</p>
+{{!-- incomes,
+        expenses,
+        user,
+        loggedIn --}}
+<div class="dashboard-header">
+    <button id="showExpense">Show Expenses</button>
+    <button id="showIncome">Show Income</button>
+</div>
+<div class="dashboard-body">
+    <div class="column">
+        <div class="money-section">
+            <h2>Incoming</h2>
+        </div>
+        <div class="money-section">
+            <h2>Outgoing</h2>
+        </div>
+        <div class="money-section">
+            <h2>Difference</h2>
+            $$$$
+        </div>
+    </div>
+    {{> expenses-form expenses}}
+</div>
+<script src="/javascript/difference.js"></script>
+{{#if expenses.length}}
+<script src="/javascript/addExpense.js"></script>
+{{/if}}
+{{#if incomes.length}}
+<script src="/javasript/addIncome.js"></script>
+{{/if}}
