@@ -33,12 +33,11 @@ nav {
 }
 
 .dashboard-body {
-    margin-top: 40px;
-    width: 100%;
+    margin-top: 20px;
 }
 .column {
     float: left;
-    width: fit-content;
+    width: 25%;
     height: 400px;
     padding: 20px;
     border: 1px solid var(--black);
@@ -53,15 +52,10 @@ nav {
     border: 1px solid var(--black);
     height: 400px;
     padding: 5px;
-    width: 300px;
 }
 /* dashboard body end */
 
 /* expence form start */
-.addExpenseForm {
-    width: 300px;
-}
-
 .addExpenseForm div {
     margin-top: 10px;
 }
@@ -73,6 +67,19 @@ nav {
 .addExpenseForm input {
     width: 100%;
     height: 20px;
+}
+
+.radio-display {
+    margin-bottom: 30px;
+}
+
+input[type="radio"] {
+    width: auto;
+    margin: 0 5px;
+}
+
+.radio-display label {
+    line-height: 1px;
 }
 
 .addExpenseForm button {
