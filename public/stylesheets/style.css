@@ -1,0 +1,80 @@
+:root {
+    --black: #000;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+/* header start */
+header {
+    border-bottom: 1px solid var(--black);
+    padding: 20px;
+    position: relative;
+}
+
+#logo {
+    margin: 20px;
+}
+
+nav {
+    float: right;
+    margin-right: 20px;
+    position: relative;
+    bottom: 25px;
+}
+/* header end */
+
+/* dashboard */
+.dashboard-header {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.dashboard-body {
+    margin-top: 40px;
+    width: 100%;
+}
+.column {
+    float: left;
+    width: fit-content;
+    height: 400px;
+    padding: 20px;
+    border: 1px solid var(--black);
+}
+
+.money-section {
+    margin-top: 20px;
+}
+
+/* dashboard body start */
+#list {
+    border: 1px solid var(--black);
+    height: 400px;
+    padding: 5px;
+    width: 300px;
+}
+/* dashboard body end */
+
+/* expence form start */
+.addExpenseForm {
+    width: 300px;
+}
+
+.addExpenseForm div {
+    margin-top: 10px;
+}
+
+.addExpenseForm label {
+    font-weight: 700;
+}
+
+.addExpenseForm input {
+    width: 100%;
+    height: 20px;
+}
+
+.addExpenseForm button {
+    width: 100%;
+}
