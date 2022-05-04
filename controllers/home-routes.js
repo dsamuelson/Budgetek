@@ -66,18 +66,16 @@ router.get('/user', async (req, res) => {
     }
   });
 
+  router.get('/signup', async (req, res) => {
+    res.render('signup');
+  });
+
   router.get('/', (req, res) => {
     if(req.session.logged_in) {
       res.redirect('/user');
       return;
     }
-    res.render('login');
+    res.render('homepage');
   });
-
-  router.get('/signup', async (req, res) => {
-    res.render('signup');
-  });
-
-  
 
   module.exports = router;
