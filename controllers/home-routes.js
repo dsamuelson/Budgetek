@@ -25,7 +25,6 @@ router.get('/user', async (req, res) => {
           },
         ],
       });
-      console.log(incomeData);
       console.log('here2')
       // Get all expenses
       const expenseData = await Expense.findAll({
@@ -47,6 +46,7 @@ router.get('/user', async (req, res) => {
   
       // Serialize data so the template can read it
       const incomes = incomeData.map((income) => income.get({ plain: true }));
+      console.log(incomes);
   
       const expenses = expenseData.map((expense) =>
         expense.get({ plain: true })
@@ -62,7 +62,8 @@ router.get('/user', async (req, res) => {
         user,
         loggedIn: req.session.loggedIn,
       });
-      } catch (err) {
+      } 
+      catch (err) {
       res.status(500).json(err);
     }
   });

@@ -1,3 +1,7 @@
+{{!-- incomes,
+        expenses,
+        user,
+        loggedIn --}}
 <div class="dashboard-header">
     <button id="showExpense">Show Expenses</button>
     <button id="showIncome">Show Income</button>
@@ -6,11 +10,19 @@
     <div class="column">
         <div class="money-section">
             <h2>Incoming</h2>
-            $$$$
+            {{#if incomes.length}}
+            {{#each incomes as |income|}}
+            {{> incomes-form income}}
+            {{/each}}
+            {{/if}}
         </div>
         <div class="money-section">
             <h2>Outgoing</h2>
-            $$$$
+            {{#if expenses.length}}
+            {{#each expenses as |expense|}}
+            {{> expenses-form expense}}
+            {{/each}}
+            {{/if}}
         </div>
         <div class="money-section">
             <h2>Difference</h2>
@@ -49,3 +61,4 @@
         </div>
     </div>
 </div>
+<script src="/javascript/difference.js"></script>
