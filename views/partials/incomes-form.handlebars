@@ -1,1 +1,33 @@
-<p>{{pay}}</p>
+<div class="column">
+        <div id="list">
+            {{#each this}}
+            <p>{{title}} {{pay}}</p>
+            {{/each}}
+        </div>
+    </div>
+    <div class="column">
+        <div id="form-display">
+            <form class="addIncomeForm">
+                <div>
+                    <label for="income-name">Name of Income:</label><br>
+                    <input type="text" name="income-name" id="income-name">
+                </div>
+                <div>
+                    <label for="income-frequency">Frequency:</label><br>
+                    <input type="text" name="income-frequency" id="income-frequency">
+                </div>
+                <div>
+                <p>How frequent is this income?</p>
+                <div class="radio-display">
+                    <input type="radio" class="radio" name="frequency" value="Primary" id="primary" />
+                    <label for="primary">Primary</label>
+                    <input type="radio" class="radio" name="frequency" value="Secondary" id="secondary" />
+                    <label for="secondary">Secondary</label>
+                </div>
+                </div>
+                <div>
+                    <button type="submit">Add income</button>
+                </div>
+            </form>
+        </div>
+    </div>

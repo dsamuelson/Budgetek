@@ -10,55 +10,21 @@
     <div class="column">
         <div class="money-section">
             <h2>Incoming</h2>
-            {{#if incomes.length}}
-            {{#each incomes as |income|}}
-            {{> incomes-form income}}
-            {{/each}}
-            {{/if}}
         </div>
         <div class="money-section">
             <h2>Outgoing</h2>
-            {{#if expenses.length}}
-            {{#each expenses as |expense|}}
-            {{> expenses-form expense}}
-            {{/each}}
-            {{/if}}
         </div>
         <div class="money-section">
             <h2>Difference</h2>
             $$$$
         </div>
     </div>
-    <div class="column">
-        <div id="list">
-            <strong>List</strong>
-        </div>
-    </div>
-    <div class="column">
-        <div id="form-display">
-            <form class="addExpenseForm">
-                <div>
-                    <label for="expense-name">Name of Expense:</label><br>
-                    <input type="text" name="expense-name" id="expense-name">
-                </div>
-                <div>
-                    <label for="expense-frequency">Frequency:</label><br>
-                    <input type="text" name="expense-frequency" id="expense-frequency">
-                </div>
-                <div>
-                <p>How frequent is this expense?</p>
-                <div class="radio-display">
-                    <input type="radio" class="radio" name="frequency" value="Primary" id="primary" />
-                    <label for="primary">Primary</label>
-                    <input type="radio" class="radio" name="frequency" value="Secondary" id="secondary" />
-                    <label for="secondary">Secondary</label>
-                </div>
-                </div>
-                <div>
-                    <button type="submit">Add Expense</button>
-                </div>
-            </form>
-        </div>
-    </div>
+    {{> expenses-form expenses}}
 </div>
 <script src="/javascript/difference.js"></script>
+{{#if expenses.length}}
+<script src="/javascript/addExpense.js"></script>
+{{/if}}
+{{#if incomes.length}}
+<script src="/javasript/addIncome.js"></script>
+{{/if}}
