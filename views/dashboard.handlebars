@@ -21,10 +21,13 @@
     </div>
 
     <div hidden id="user-id">{{userId}}</div>
-  
-    {{> expenses-form expenses}}
+    <div id="expenses">
+        {{> expenses-form expenses}}
+    </div>
     
-    {{> incomes-form incomes}}
+    <div id="incomes" hidden>
+        {{> incomes-form incomes}}
+    </div>
     
 </div>
 <script src="/javascript/difference.js"></script>
