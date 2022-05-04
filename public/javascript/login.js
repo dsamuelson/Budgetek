@@ -16,7 +16,7 @@ async function loginFormHandler(event) {
     });
 
     if (response.ok) {
-      document.location.replace("/");
+      document.location.replace("/user");
     } else {
       alert(response.statusText);
     }
@@ -43,7 +43,7 @@ async function signupFormHandler(event) {
     });
 
     if (response.ok) {
-      document.location.replace("/user");
+      document.location.replace("/");
     } else {
       alert(response.statusText);
     }

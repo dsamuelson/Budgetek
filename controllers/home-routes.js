@@ -6,8 +6,8 @@ const { User,  Income, Expense } = require('../models');
 router.get('/user', async (req, res) => {
     try {
       //redirect to login page if user is not logged in
-      console.log(req.session.logged_in);
-      if (!req.session.logged_in) {
+      console.log(req.session.loggedIn);
+      if (!req.session.loggedIn) {
         res.redirect('/');
         return;
       }
@@ -59,16 +59,16 @@ router.get('/user', async (req, res) => {
         incomes,
         expenses,
         user,
-        logged_in: req.session.logged_in,
+        loggedIn: req.session.loggedIn,
       });
-    } catch (err) {
+      } catch (err) {
       res.status(500).json(err);
     }
   });
 
   router.get('/', (req, res) => {
-    if(req.session.logged_in) {
-      console.log(req.session.logged_in)
+    console.log(req.session.loggedIn)
+    if(req.session.loggedIn) {
       res.redirect('/user');
       return;
     }
