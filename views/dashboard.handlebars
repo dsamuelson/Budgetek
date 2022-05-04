@@ -19,12 +19,18 @@
             $$$$
         </div>
     </div>
+  
     {{> expenses-form expenses}}
+    
+    {{> incomes-form incomes}}
+    
 </div>
 <script src="/javascript/difference.js"></script>
+<script src="/javascript/showPartial.js"></script>
+
 {{#if expenses.length}}
-<script src="/javascript/addExpense.js"></script>
+    <script src="/javascript/addExpense.js"></script>
 {{/if}}
 {{#if incomes.length}}
-<script src="/javasript/addIncome.js"></script>
+    <script src="/javascript/addIncome.js"></script>
 {{/if}}
