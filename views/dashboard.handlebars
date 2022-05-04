@@ -10,13 +10,15 @@
     <div class="column">
         <div class="money-section">
             <h2>Incoming</h2>
+            <p id="total-incomes"></p>
         </div>
         <div class="money-section">
             <h2>Outgoing</h2>
+            <p id="total-expenses"></p>
         </div>
         <div class="money-section">
             <h2>Difference</h2>
-            $$$$
+            <p id="difference"></p>
         </div>
     </div>
 
@@ -30,12 +32,8 @@
     </div>
     
 </div>
+
 <script src="/javascript/difference.js"></script>
 <script src="/javascript/showPartial.js"></script>
-
-{{#if expenses.length}}
-    <script src="/javascript/addExpense.js"></script>
-{{/if}}
-{{#if incomes.length}}
-    <script src="/javascript/addIncome.js"></script>
-{{/if}}
+<script src="/javascript/addExpense.js"></script>
+<script src="/javascript/addIncome.js"></script>

@@ -20,8 +20,6 @@ async function addExpense(event) {
         } else {
             is_vital = false;
         }
-
-        console.log(title, cost, frequency, is_vital, user_id)
       
         if (title && cost && frequency && priority) {
           const response = await fetch("/api/expense", {
