@@ -31,3 +31,5 @@ const seedAll = async () => {
 };
 
 seedAll();
+
+module.exports = seedAll;

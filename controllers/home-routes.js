@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const res = require('express/lib/response');
+const fs = require('fs');
 const { User,  Income, Expense } = require('../models');
 
 //Get all info for homepage if user is logged in
@@ -73,6 +74,12 @@ router.get('/user', async (req, res) => {
       return;
     }
     res.render('homepage');
+  });
+
+  router.get('/run-seeds', (req, res) => {
+    const seedAll = require('../seeds/index');
+
+    seedAll();
   });
 
   module.exports = router;
