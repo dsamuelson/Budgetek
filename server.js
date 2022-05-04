@@ -33,7 +33,7 @@ app.use(session(sess));
 
 //importing helpers for formatting purposes
 
-const helpers = require('./utils/helpers');
+//const helpers = require('./utils/helpers');
 
 // creating a handlebars instance and feeding in the helpers to use in templates
 
