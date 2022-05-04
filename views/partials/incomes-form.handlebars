@@ -1,5 +1,5 @@
 <div class="column">
-        <ul id="list">
+        <ul id="incomes-list">
             {{#each this}}
                 <li>{{title}} {{pay}}</li>
             {{/each}}
@@ -17,11 +17,14 @@
                     <input type="text" name="income-frequency" id="income-frequency">
                 </div>
                 <div>
-                <p>How frequent is this income?</p>
-                <div class="radio-display">
-                    <input type="radio" class="radio" name="frequency" value="Primary" id="primary" />
+                    <label for="income-pay">Pay:</label><br>
+                    <input type="text" name="pay" id="income-pay">
+                </div>
+                <div>
+                <div id="income-priority" class="radio-display">
+                    <input type="radio" class="radio" name="priority" value="Primary" id="primary" />
                     <label for="primary">Primary</label>
-                    <input type="radio" class="radio" name="frequency" value="Secondary" id="secondary" />
+                    <input type="radio" class="radio" name="priority" value="Secondary" id="secondary" />
                     <label for="secondary">Secondary</label>
                 </div>
                 </div>
