@@ -11,7 +11,7 @@ router.get('/user', async (req, res) => {
         res.redirect('/');
         return;
       }
-  
+      console.log('here1')
       // Get all posts
       const incomeData = await Income.findAll({
         include: [
@@ -25,7 +25,7 @@ router.get('/user', async (req, res) => {
         ],
       });
       console.log(incomeData);
-
+      console.log('here2')
       // Get all expenses
       const expenseData = await Expense.findAll({
         include: [
