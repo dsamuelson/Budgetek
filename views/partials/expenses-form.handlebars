@@ -1,7 +1,8 @@
 <div class="column">
         <ul id="expenses-list">
             {{#each this}}
-                <li>{{title}} ({{frequency}})<br>{{cost}}</li>
+                <li>{{title}} ({{frequency}})<br>{{cost}}
+                <a href="/expense/{{id}}"><button>Delete</button></a></li>
             {{/each}}
         </ul>
     </div>
