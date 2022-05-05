@@ -20,6 +20,7 @@ router.get('/user', async (req, res) => {
         },
         attributes: [
           'id',
+          'title',
           'pay',
           'frequency',
           [sequelize.literal(`(SELECT SUM(pay) FROM income WHERE income.user_id = ${req.session.user_id})`), 'total_pay']
