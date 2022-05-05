@@ -57,21 +57,23 @@ router.post('/', async (req, res) => {
   
   //DELETE a income by id. 
   router.delete('/:id', async (req, res) => {
-    try {
-      const selectedIncome = await Income.destroy({
+    Income.destroy({
         where: {
           id: req.params.id,
         },
-      });
+      })
+      .then (incomeData => {
   
       if (!incomeData) {
         res.status(404).json({ message: 'No income found with this id!' });
         return;
       }
-      res.status(200).json(selectedIncome);
-    } catch (err) {
-      res.status(500).json(err);
-    }
+      res.status(200).json(incomeData);
+
+    }).catch (err =>{
+      console.log(err); 
+      res.status(500).json(err)
+    })
   });
 
 module.exports = router;

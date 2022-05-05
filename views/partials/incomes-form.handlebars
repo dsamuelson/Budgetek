@@ -1,7 +1,8 @@
 <div class="column">
         <ul id="incomes-list">
             {{#each this}}
-                <li>{{title}} ({{frequency}})<br>{{pay}}</li>
+                <li>{{title}} ({{frequency}})<br>{{pay}}
+                <button data-id="{{id}}" id="delete-expense">Delete</button></li>
             {{/each}}
         </ul>
     </div>

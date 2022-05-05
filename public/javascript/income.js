@@ -43,4 +43,21 @@ async function addIncome(event) {
   }
 }
 
+async function deleteIncome(event) {
+  event.preventDefault();
+
+  const incomeId = event.target.getAttribute("data-id");
+
+  const response = await fetch(`/api/income/${incomeId}`, {
+    method: "DELETE"
+  })
+ if(response.ok) {
+   location.reload();
+ } else {
+    alert(response.statusText);
+  }
+};
+
 document.querySelector(".addIncomeForm").addEventListener("submit", addIncome);
+
+document.querySelector('#expenses-list').addEventListener('click', deleteIncome);
