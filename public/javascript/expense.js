@@ -49,16 +49,12 @@ async function deleteExpense(event) {
 
   const expenseId = event.target.getAttribute("data-id");
 
-  console.log(event.target)
-  console.log(expenseId)
-
   const response = await fetch(`/api/expense/${expenseId}`, {
     method: "DELETE"
   })
-
-  if(response.ok) {
-    location.reload();
-  } else {
+ if(response.ok) {
+   location.reload();
+ } else {
     alert(response.statusText);
   }
 };
@@ -68,5 +64,5 @@ document
   .addEventListener("submit", addExpense);
 
 document
-  .querySelector('#delete-expense')
+  .querySelector('#expenses-list')
   .addEventListener('click', deleteExpense);

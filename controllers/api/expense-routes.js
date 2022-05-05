@@ -15,7 +15,7 @@ router.get('/', async( req, res) => {
 // Get one expense
 router.get('/:id',async (req, res) => {
     try {
-        const expenseData = await expense.findByPk(req.params.id, {
+        const expenseData = await Expense.findByPk(req.params.id, {
             where: {
                 id: req.params.id,
             }
@@ -56,22 +56,23 @@ router.post('/', async (req, res) => {
   });
   
   //DELETE a expense by id. 
-  router.delete('/:id', async (req, res) => {
-    try {
-      const selectedExpense = await Expense.destroy({
+  router.delete('/:id', (req, res) => {
+    Expense.destroy({
         where: {
           id: req.params.id,
         },
-      });
-  
-      if (!ExpenseData) {
+      })  
+      .then (ExpenseData => {
+        if(!ExpenseData){
         res.status(404).json({ message: 'No Expense found with this id!' });
         return;
       }
-      res.status(200).json(selectedExpense);
-    } catch (err) {
-      res.status(500).json(err);
-    }
+      res.status(200).json(ExpenseData);
+    })
+    .catch(err => { 
+      console.log(err);
+      res.status(500).json(err)
+    })
   });
 
 module.exports = router;
