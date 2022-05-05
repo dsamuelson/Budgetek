@@ -1,7 +1,7 @@
 <div class="column">
         <ul id="expenses-list">
             {{#each this}}
-                <li>{{title}} {{cost}}</li>
+                <li>{{title}} ({{frequency}})<br>{{cost}}</li>
             {{/each}}
         </ul>
     </div>
@@ -14,7 +14,16 @@
                 </div>
                 <div>
                     <label for="expense-frequency">Frequency:</label><br>
-                    <input type="text" name="expense-frequency" id="expense-frequency">
+                    <select name="expense-frequency" id="expense-frequency">
+                        <option value="---" selected>---</option>
+                        <option value="once">Once</option>
+                        <option value="weekly">Weekly</option>
+                        <option value="biweekly">Biweekly</option>
+                        <option value="monthly">Monthly</option>
+                        <option value="quarterly">Quarterly</option>
+                        <option value="semi-annually">Semi-annually</option>
+                        <option value="annually">Annually</option>
+                    </select>
                 </div>
                 <div>
                     <label for="expense-cost">Cost:</label><br>
@@ -22,10 +31,10 @@
                 </div>
                 <div>
                 <div id="expense-priority" class="radio-display">
-                    <input type="radio" class="radio" name="priority" value="Primary" id="primary" />
-                    <label for="primary">Primary</label>
-                    <input type="radio" class="radio" name="priority" value="Secondary" id="secondary" />
-                    <label for="secondary">Secondary</label>
+                    <input type="radio" class="radio" name="priority" value="vital" id="vital" />
+                    <label for="vital">Vital</label>
+                    <input type="radio" class="radio" name="priority" value="non-vital" id="non-vital" />
+                    <label for="non-vital">Non-vital</label>
                 </div>
                 </div>
                 <div>

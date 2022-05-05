@@ -1,7 +1,7 @@
 <div class="column">
         <ul id="incomes-list">
             {{#each this}}
-                <li>{{title}} {{pay}}</li>
+                <li>{{title}} ({{frequency}})<br>{{pay}}</li>
             {{/each}}
         </ul>
     </div>
@@ -14,7 +14,14 @@
                 </div>
                 <div>
                     <label for="income-frequency">Frequency:</label><br>
-                    <input type="text" name="income-frequency" id="income-frequency">
+                    <select name="income-frequency" id="income-frequency">
+                        <option value="---" selected>---</option>
+                        <option value="once">Once</option>
+                        <option value="weekly">Weekly</option>
+                        <option value="biweekly">Biweekly</option>
+                        <option value="monthly">Monthly</option>
+                        <option value="annually">Annually</option>
+                    </select>
                 </div>
                 <div>
                     <label for="income-pay">Pay:</label><br>
