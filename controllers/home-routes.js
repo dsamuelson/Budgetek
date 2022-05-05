@@ -59,7 +59,7 @@ router.get('/user', async (req, res) => {
       res.render('dashboard', {
         incomes,
         expenses,
-        user,
+        userId: req.session.user_id,
         loggedIn: req.session.loggedIn,
       });
       } 
