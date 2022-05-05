@@ -1,13 +1,27 @@
+const currentTab = localStorage.getItem('currentTab');
+const expenses = document.getElementById('expenses');
+const incomes = document.getElementById('incomes');
+
+if(currentTab === 'Expenses') {
+  expenses.hidden = false;
+  incomes.hidden = true;
+} else {
+  expenses.hidden = true;
+  incomes.hidden = false;
+}
+
 function expensesClick(event) {
     event.preventDefault();
-    document.getElementById('expenses').hidden = false;
-    document.getElementById('incomes').hidden = true;
+    expenses.hidden = false;
+    incomes.hidden = true;
+    localStorage.setItem('currentTab', 'Expenses');
 };
 
 function incomesClick(event) {
     event.preventDefault();
-    document.getElementById('incomes').hidden = false;
-    document.getElementById('expenses').hidden = true;
+    incomes.hidden = false;
+    expenses.hidden = true;
+    localStorage.setItem('currentTab', 'Income');
 };
 
 document
