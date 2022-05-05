@@ -2,6 +2,7 @@ const router = require('express').Router();
 const res = require('express/lib/response');
 const fs = require('fs');
 const { User,  Income, Expense } = require('../models');
+const { sequelize } = require('../models/Income');
 
 //Get all info for homepage if user is logged in
 router.get('/user', async (req, res) => {
@@ -12,9 +13,17 @@ router.get('/user', async (req, res) => {
         res.redirect('/');
         return;
       }
-      console.log('here1')
       // Get all posts
       const incomeData = await Income.findAll({
+        where: {
+          user_id: req.session.user_id
+        },
+        attributes: [
+          'id',
+          'pay',
+          'frequency',
+          [sequelize.literal(`(SELECT SUM(pay) FROM income WHERE income.user_id = ${req.session.user_id})`), 'total_pay']
+        ],
         include: [
           {
             model: User,
@@ -25,9 +34,18 @@ router.get('/user', async (req, res) => {
           },
         ],
       });
-      console.log('here2')
       // Get all expenses
       const expenseData = await Expense.findAll({
+        where: {
+          user_id: req.session.user_id
+        },
+        attributes: [
+          'id',
+          'title',
+          'cost',
+          'frequency',
+          [sequelize.literal(`(SELECT SUM(cost) FROM expense WHERE expense.user_id = ${req.session.user_id})`), 'total_bills']
+        ],
         include: [
           {
             model: User,
@@ -51,14 +69,17 @@ router.get('/user', async (req, res) => {
       const expenses = expenseData.map((expense) =>
         expense.get({ plain: true })
       );
+
+      const budgetDiff = incomes[0].total_pay - expenses[0].total_bills;
   
       //const user = userData.map((user) => user.get({ plain: true }));
       const user = userData.get({ plain: true });
-  
+      console.log(incomes[0].total_pay)
       // Pass serialized data and session flag into template
       res.render('dashboard', {
         incomes,
         expenses,
+        budgetDiff,
         userId: req.session.user_id,
         loggedIn: req.session.loggedIn,
       });
