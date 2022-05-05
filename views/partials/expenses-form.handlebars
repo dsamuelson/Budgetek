@@ -1,0 +1,48 @@
+<div class="column">
+        <ul id="expenses-list">
+            {{#if this}}
+            {{#each this}}
+                <li>{{title}} ({{frequency}})<br>{{cost}}
+                <button data-id="{{id}}" id="delete-expense">Delete</button></li>
+            {{/each}}
+            {{/if}}
+        </ul>
+    </div>
+    <div class="column">
+        <div id="form-display">
+            <form class="addExpenseForm">
+                <div>
+                    <label for="expense-name">Name of Expense:</label><br>
+                    <input type="text" name="expense-name" id="expense-name">
+                </div>
+                <div>
+                    <label for="expense-frequency">Frequency:</label><br>
+                    <select name="expense-frequency" id="expense-frequency">
+                        <option value="---" selected>---</option>
+                        <option value="once">Once</option>
+                        <option value="weekly">Weekly</option>
+                        <option value="biweekly">Biweekly</option>
+                        <option value="monthly">Monthly</option>
+                        <option value="quarterly">Quarterly</option>
+                        <option value="semi-annually">Semi-annually</option>
+                        <option value="annually">Annually</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="expense-cost">Cost:</label><br>
+                    <input type="text" name="cost" id="expense-cost">
+                </div>
+                <div>
+                <div id="expense-priority" class="radio-display">
+                    <input type="radio" class="radio" name="priority" value="vital" id="vital" />
+                    <label for="vital">Vital</label>
+                    <input type="radio" class="radio" name="priority" value="non-vital" id="non-vital" />
+                    <label for="non-vital">Non-vital</label>
+                </div>
+                </div>
+                <div>
+                    <button type="submit">Add Expense</button>
+                </div>
+            </form>
+        </div>
+    </div>
