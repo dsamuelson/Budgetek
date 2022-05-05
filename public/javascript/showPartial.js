@@ -1,27 +1,30 @@
-const currentTab = localStorage.getItem('currentTab');
+const currentTab = sessionStorage.getItem('currentTab');
 const expenses = document.getElementById('expenses');
 const incomes = document.getElementById('incomes');
 
 if(currentTab === 'Expenses') {
   expenses.hidden = false;
   incomes.hidden = true;
-} else {
+} else if(currentTab === 'Income'){
   expenses.hidden = true;
   incomes.hidden = false;
+} else {
+  expenses.hidden = false;
+  incomes.hidden = true;
 }
 
 function expensesClick(event) {
     event.preventDefault();
     expenses.hidden = false;
     incomes.hidden = true;
-    localStorage.setItem('currentTab', 'Expenses');
+    sessionStorage.setItem('currentTab', 'Expenses');
 };
 
 function incomesClick(event) {
     event.preventDefault();
     incomes.hidden = false;
     expenses.hidden = true;
-    localStorage.setItem('currentTab', 'Income');
+    sessionStorage.setItem('currentTab', 'Income');
 };
 
 document

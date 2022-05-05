@@ -35,7 +35,7 @@ async function addIncome(event) {
       });
   
       if (response.ok) {
-        localStorage.setItem('currentTab', 'Income');
+        sessionStorage.setItem('currentTab', 'Income');
         document.location.replace("/user");
       } else {
         alert(response.statusText);

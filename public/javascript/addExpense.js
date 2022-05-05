@@ -35,7 +35,7 @@ async function addExpense(event) {
           });
       
           if (response.ok) {
-            localStorage.setItem('currentTab', 'Expenses');
+            sessionStorage.setItem('currentTab', 'Expenses');
             document.location.replace("/user");
           } else {
             alert(response.statusText);
