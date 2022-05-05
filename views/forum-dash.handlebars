@@ -1,0 +1,21 @@
+<h2 class="title-welcome">Welcome To your Questions Dashboard</h2>
+
+{{#if posts.length}}
+<section>
+  <h2>Your Posts</h2>
+  <ul>
+    {{#each posts as |post|}}
+    <li>
+      {{> post-info post}}
+      <a href="/forum-dash/edit/{{post.id}}" class="edit-link">Edit post</a>
+    </li>
+    {{/each}}
+  </ul>
+</section>
+{{/if}}
+
+<div class="new-post-div">
+  <a href="/forum-dash/new-post" class="new-post-btn">+ New Post</a>
+</div>
+
+<script src="/javascript/showPartial.js"></script>

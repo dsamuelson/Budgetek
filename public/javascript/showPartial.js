@@ -2,6 +2,7 @@ const currentTab = sessionStorage.getItem('currentTab');
 const expenses = document.getElementById('expenses');
 const incomes = document.getElementById('incomes');
 
+
 if(currentTab === 'Expenses') {
   expenses.hidden = false;
   incomes.hidden = true;
@@ -33,3 +34,9 @@ document
 document
   .querySelector("#showIncome")
   .addEventListener("click", incomesClick);
+
+document
+  .querySelector('#gotoForum')
+  .addEventListener('click', ()=> {
+    location.replace('/forum-dash')
+  })
