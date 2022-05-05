@@ -6,6 +6,7 @@ async function addExpense(event) {
   const frequency = document.querySelector("#expense-frequency").value.trim();
   const user_id = document.querySelector("#user-id").textContent;
   const ele = document.getElementsByName("priority");
+
   let priority;
   let is_vital;
 
@@ -43,6 +44,29 @@ async function addExpense(event) {
   }
 }
 
+async function deleteExpense(event) {
+  event.preventDefault();
+
+  const expenseId = event.target.getAttribute("data-id");
+
+  console.log(event.target)
+  console.log(expenseId)
+
+  const response = await fetch(`/api/expense/${expenseId}`, {
+    method: "DELETE"
+  })
+
+  if(response.ok) {
+    location.reload();
+  } else {
+    alert(response.statusText);
+  }
+};
+
 document
   .querySelector(".addExpenseForm")
   .addEventListener("submit", addExpense);
+
+document
+  .querySelector('#delete-expense')
+  .addEventListener('click', deleteExpense);
