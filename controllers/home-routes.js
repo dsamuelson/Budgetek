@@ -57,26 +57,24 @@ router.get('/user', async (req, res) => {
           },
         ],
       });
-  
+
+     
       //Get user data
-      const userData = await User.findByPk(req.session.user_id);
-      console.log('THE USER DATA: ' + userData);
-      console.log(typeof userData);
   
       // Serialize data so the template can read it
       const incomes = incomeData.map((income) => income.get({ plain: true }));
-      console.log(incomes);
-  
+      
       const expenses = expenseData.map((expense) =>
         expense.get({ plain: true })
       );
 
-      const budgetDiff = incomes[0].total_pay - expenses[0].total_bills;
-  
-      //const user = userData.map((user) => user.get({ plain: true }));
-      const user = userData.get({ plain: true });
-      console.log(incomes[0].total_pay)
+      var budgetDiff = 0;
+      
+      if (incomes.length && expenses.length) {
+        budgetDiff = incomes[0].total_pay - expenses[0].total_bills;
+      }
       // Pass serialized data and session flag into template
+
       res.render('dashboard', {
         incomes,
         expenses,

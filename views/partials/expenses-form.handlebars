@@ -1,9 +1,11 @@
 <div class="column">
         <ul id="expenses-list">
+            {{#if this}}
             {{#each this}}
                 <li>{{title}} ({{frequency}})<br>{{cost}}
                 <button data-id="{{id}}" id="delete-expense">Delete</button></li>
             {{/each}}
+            {{/if}}
         </ul>
     </div>
     <div class="column">

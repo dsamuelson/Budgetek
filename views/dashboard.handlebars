@@ -10,15 +10,21 @@
     <div class="column">
         <div class="money-section">
             <h2>Incoming</h2>
+            {{#if incomes.0.total_pay}}
             <p id="total-incomes">{{incomes.0.total_pay}}</p>
+            {{/if}}
         </div>
         <div class="money-section">
             <h2>Outgoing</h2>
+            {{#if expenses.0.total_bills}}
             <p id="total-expenses">{{expenses.0.total_bills}}</p>
+            {{/if}}
         </div>
         <div class="money-section">
             <h2>Difference</h2>
+            {{#if budgetDiff}}
             <p id="difference">{{budgetDiff}}</p>
+            {{/if}}
         </div>
     </div>
 
