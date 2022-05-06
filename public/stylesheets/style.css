@@ -8,7 +8,7 @@
 }
 
 /* header start */
-header {
+/* header {
     border-bottom: 1px solid var(--black);
     padding: 20px;
     position: relative;
@@ -23,8 +23,25 @@ nav {
     margin-right: 20px;
     position: relative;
     bottom: 25px;
-}
+} */
 /* header end */
+
+/* login/signup forms start */
+#signUpDisplay {
+    display: none;
+    transition: 500ms;
+    margin-top: 20px;
+}
+#loginBtn {
+    width: 100px;
+}
+
+#showSignup {
+    width: 150px;
+    margin-left: 10px;
+}
+
+/* login/signup forms end */
 
 /* dashboard */
 .dashboard-header {
