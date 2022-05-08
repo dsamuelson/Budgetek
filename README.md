@@ -38,7 +38,7 @@ Here you can input your incomes and whether that is a primary or secondary form 
 
 ## Contributors
 
-David Samuelson
+David Samuelson,
 Ben Milner, Holdan McMullen, Eric Shumway
 
 ## Features
@@ -63,7 +63,7 @@ Ben Milner, Holdan McMullen, Eric Shumway
 
 ## Usage
 
--Usage is pretty simple just run npm start and go to localhost:3001 and it should start with a login screen
+- Usage is pretty simple just run npm start and go to localhost:3001 and it should start with a login screen
 
 ## Contact
 
