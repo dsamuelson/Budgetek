@@ -11,7 +11,7 @@ async function deleteFormHandler(event) {
     });
 
     if (response.ok) {
-        document.location.replace('/forum-dash');
+        document.location.replace('/forum/dashboard');
     } else {
         alert(response.statusText);
     }
