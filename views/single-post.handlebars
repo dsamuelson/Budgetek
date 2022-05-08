@@ -1,19 +1,21 @@
-{{> post-info post}}
+<div class="dashboard-body container">
+  {{> post-info post}}
 
-{{#if loggedIn}}
-<form class="comment-form">
-  <h2>Please add a Comment!</h2>
-  <div>
-    <textarea name="comment-body"></textarea>
-  </div>
-  <div>
-    <button type="submit">add comment</button>
-  </div>
-</form>
-{{/if}}
+  {{#if loggedIn}}
+  <form class="comment-form">
+    <h2>Please add a Comment!</h2>
+    <div>
+      <textarea class="w-50" name="comment-body"></textarea>
+    </div>
+    <div>
+      <button class="add-comment-btn btn" type="submit">Add comment</button>
+    </div>
+  </form>
+  {{/if}}
 
-{{> comments post.comments}}
+  {{> comments post.comments}}
 
-{{#if loggedIn}}
-<script src="/javascript/comment.js"></script>
-{{/if}}
+  {{#if loggedIn}}
+  <script src="/javascript/comment.js"></script>
+  {{/if}}
+</div>

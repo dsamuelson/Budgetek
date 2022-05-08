@@ -94,7 +94,9 @@ a:hover {
 .login-form input,
 .signup-form input,
 .addExpenseForm input,
-.addIncomeForm input {
+.addIncomeForm input,
+.delete-post-btn,
+.add-comment-btn {
     border: 1px solid var(--black);
     padding: 5px;
 }
@@ -106,7 +108,9 @@ a:hover {
 .login-form .btn,
 .signup-form .btn,
 .addExpenseForm button,
-.addIncomeForm button {
+.addIncomeForm button,
+.delete-post-btn,
+.add-comment-btn {
     background-color: var(--primary);
     border: none;
     transition: 300ms;
@@ -127,7 +131,9 @@ a:hover {
 }
 
 .login-form .btn:hover,
-.signup-form .btn:hover {
+.signup-form .btn:hover,
+.delete-post-btn:hover,
+.add-comment-btn:hover {
     background-color: var(--white);
     color: var(--black);
     transition: 300ms;
@@ -152,6 +158,10 @@ a:hover {
 /* forms end */
 
 /* dashboard body start */
+ul {
+    list-style-type: none;
+}
+
 #dashboard-header {
     position: relative;
     bottom: -8px;

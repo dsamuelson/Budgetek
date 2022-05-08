@@ -1,13 +1,14 @@
-<a href="/forum-dash"><button>Return to Ask Forum</button></a>
 <article class="post">
   <div class="title">
-   <h2><a href="/post/{{id}}">{{title}}</a></h2>
+
+    <h2><a href="/post/{{id}}">{{title}}</a></h2>
+    <a href="/forum-dash"> &larr; Back to dashboard</a>
   </div>
   <div class="content">
     <p>{{post_content}}</p>
   </div>
   <div class="meta">
-   by Anonymous on {{format_date created_at}}
+    by Anonymous on {{format_date created_at}}
     |
     <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
   </div>

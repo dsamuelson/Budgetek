@@ -1,41 +1,43 @@
-<h2 class="title-welcome">Here you can Edit your Post!</h2>
-<article>
-  <a href="/forum-dash"> &larr; Back to dashboard</a>
+<h2 class="container dashboard-header title-welcome">Here you can Edit your Post!</h2>
 
-  <form class="edit-post-form">
+<div class="dashboard-body container">
+  <article>
+    <a href="/forum-dash"> &larr; Back to dashboard</a>
+
+    <form class="edit-post-form">
       <h2>Edit Post</h2>
+      <div>
+        <label for="post-title">Title</label>
+        <br>
+        <input name="post-title" type="text" value="{{post.title}}" />
+        <br>
+        <label for="post-content">Content</label>
+        <br>
+        <textarea class="w-50" id="post-content" name="post-content">{{post.post_content}}</textarea>
+      </div>
+      <div>
+        by you on {{format_date post.created_at}}
+        |
+        <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
+      </div>
+      <button type="submit" class="btn">Save post</button>
+      <br>
+      <button type="button" class="font-weight-bold delete-post-btn btn" id="delete-post-btn">Delete post</button>
+    </form>
+  </article>
+
+  <form class="comment-form">
+    <h2>Add a Comment:</h2>
     <div>
-      <label for="post-title">Title</label>
-      <br>
-      <input name="post-title" type="text" value="{{post.title}}" />
-      <br>
-      <label for="post-content">Content</label>
-      <br>
-      <textarea id="post-content" name="post-content">{{post.post_content}}</textarea>
+      <textarea class="w-50" name="comment-body"></textarea>
     </div>
     <div>
-    by you on {{format_date post.created_at}}
-      |
-      <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
+      <button class="font-weight-bold add-comment-btn" type="submit">Add comment</button>
     </div>
-    <button type="submit" class="btn">Save post</button>
-    <br>
-    <button type="button" class="delete-post-btn btn" id="delete-post-btn">Delete post</button>
   </form>
-</article>
 
-<form class="comment-form">
-  <h2>Add a Comment:</h2>
-  <div>
-    <textarea name="comment-body"></textarea>
-  </div>
-  <div>
-    <button type="submit">add comment</button>
-  </div>
-</form>
-
-{{> comments post.comments}}
-
+  {{> comments post.comments}}
+</div>
 <script src="/javascript/edit-post.js"></script>
 <script src="/javascript/delete-post.js"></script>
 <script src="/javascript/comment.js"></script>
