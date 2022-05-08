@@ -28,6 +28,9 @@ a:hover {
     border: 0;
     box-shadow: none;
 }
+a {
+    color: rgb(0, 138, 0);
+}
 
 /* scrollbar */
 #expenses-list::-webkit-scrollbar,
