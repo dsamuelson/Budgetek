@@ -2,17 +2,19 @@ const currentTab = sessionStorage.getItem('currentTab');
 const expenses = document.getElementById('expenses');
 const incomes = document.getElementById('incomes');
 
-
-if(currentTab === 'Expenses') {
-  expenses.hidden = false;
-  incomes.hidden = true;
-} else if(currentTab === 'Income'){
-  expenses.hidden = true;
-  incomes.hidden = false;
-} else {
-  expenses.hidden = false;
-  incomes.hidden = true;
+if (expenses && incomes){
+  if(currentTab === 'Expenses') {
+    expenses.hidden = false;
+    incomes.hidden = true;
+  } else if(currentTab === 'Income'){
+    expenses.hidden = true;
+    incomes.hidden = false;
+  } else {
+    expenses.hidden = false;
+    incomes.hidden = true;
+  }
 }
+
 
 function expensesClick(event) {
     event.preventDefault();
@@ -28,15 +30,36 @@ function incomesClick(event) {
     sessionStorage.setItem('currentTab', 'Income');
 };
 
-document
+if (document.querySelector('#showExpense')){
+  document
   .querySelector("#showExpense")
   .addEventListener("click", expensesClick);
-document
+}
+if (document.querySelector('#showIncome')) {
+  document
   .querySelector("#showIncome")
   .addEventListener("click", incomesClick);
-
-document
+}
+if (document.querySelector('#gotoForum')) {
+  document
   .querySelector('#gotoForum')
   .addEventListener('click', ()=> {
-    location.replace('/forum-dash')
-  })
+    location.replace('/forum')
+  });
+}
+
+if (document.querySelector('#gotodashboard')){
+  document
+  .querySelector('#gotodashboard')
+  .addEventListener('click', () => {
+    location.replace('/user')
+  });
+}
+
+if (document.querySelector('#gotoForumDash')) {
+  document
+    .querySelector('#gotoForumDash')
+    .addEventListener('click', () => {
+      location.replace('/forum/dashboard')
+    })
+}

@@ -6,6 +6,6 @@ const forumRoutes = require('./forum-routes');
 
 router.use('/', homeRoutes);
 router.use('/api', apiRoutes);
-router.use('/forum-dash', forumRoutes)
+router.use('/forum', forumRoutes)
 
 module.exports = router;

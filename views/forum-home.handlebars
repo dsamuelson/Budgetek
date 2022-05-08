@@ -1,0 +1,13 @@
+<div class="dashboard-body container">
+  <h2 class="d-inline">Forum Homepage</h2>
+  <button class="btn btn-secondary float-right mt-1" id="gotoForumDash">My Dash</button>
+  <ul class="post-list">
+    {{#each posts as |post|}}
+    <li class="m-2 border border-success p-2">
+      {{> home-post post }}
+    </li>
+    {{/each}}
+  </ul>
+</div>
+
+  <script src="/javascript/showPartial.js"></script>

@@ -12,7 +12,7 @@
       {{#each posts as |post|}}
       <li>
         {{> post-info post}}
-        <a href="/forum-dash/edit/{{post.id}}" class="link-success edit-link">Edit post</a>
+        <a href="/forum/edit/{{post.id}}" class="link-success edit-link">Edit post</a>
       </li>
       {{/each}}
     </ul>
@@ -23,7 +23,7 @@
 
 
   <div class="new-post-div">
-    <a href="/forum-dash/new-post" class="w-50 btn add-comment-btn btn-primary mb-2  new-post-btn">+ New Post</a>
+    <a href="/forum/new-post" class="w-50 btn add-comment-btn btn-primary mb-2  new-post-btn">+ New Post</a>
   </div>
 </div>
 <script src="/javascript/showPartial.js"></script>

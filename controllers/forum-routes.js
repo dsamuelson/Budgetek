@@ -7,6 +7,41 @@ const { Post, User, Comment } = require('../models');
 
 router.get('/', (req, res) => {
     Post.findAll({
+      attributes: [
+        'id',
+        'title',
+        'post_content',
+        'created_at'
+      ],
+      include: [
+        {
+          model: Comment,
+          attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+          include: {
+            model: User,
+            attributes: ['username']
+          }
+        },
+        {
+          model: User,
+          attributes: ['username']
+        }
+      ]
+    })
+    //feed the data recieved into the dashboard template
+      .then(dbPostData => {
+        const posts = dbPostData.map(post => post.get({ plain: true }));
+        res.render('forum-home', { posts, loggedIn: req.session.loggedIn });
+      })
+      .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+  });
+
+
+  router.get('/dashboard', (req, res) => {
+    Post.findAll({
       where: {
         user_id: 1
       },
