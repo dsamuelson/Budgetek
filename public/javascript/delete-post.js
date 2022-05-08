@@ -2,19 +2,23 @@
 // this one deletes a post using fetch along the appropriate route with the required data
 
 async function deleteFormHandler(event) {
-    event.preventDefault();
-    console.log(event);
-    const id = window.location.toString().split('/')[window.location.toString().split('/').length -1];
+    event.preventDefault()
+    console.log(event)
+    const id = window.location.toString().split('/')[
+        window.location.toString().split('/').length - 1
+    ]
 
     const response = await fetch(`/api/post/${id}`, {
-        method: 'DELETE'
-    });
+        method: 'DELETE',
+    })
 
     if (response.ok) {
-        document.location.replace('/forum/dashboard');
+        document.location.replace('/forum/dashboard')
     } else {
-        alert(response.statusText);
+        alert(response.statusText)
     }
 }
 
-document.querySelector('#delete-post-btn').addEventListener('click', deleteFormHandler);
+document
+    .querySelector('#delete-post-btn')
+    .addEventListener('click', deleteFormHandler)

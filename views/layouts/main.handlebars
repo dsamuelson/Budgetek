@@ -1,45 +1,64 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Budgetek</title>
-  {{!-- init bootstrap css --}}
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-  <link rel="stylesheet" href="/stylesheets/style.css">
-  <link rel="stylesheet" href="/stylesheets/style.css">
-  {{!-- init fonts --}}
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600&display=swap" rel="stylesheet">
-</head>
+    <head>
+        <meta charset='UTF-8' />
+        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+        <title>Budgetek</title>
+        {{! init bootstrap css }}
+        <link
+            rel='stylesheet'
+            href='https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css'
+            integrity='sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn'
+            crossorigin='anonymous'
+        />
+        <link rel='stylesheet' href='/stylesheets/style.css' />
+        <link rel='stylesheet' href='/stylesheets/style.css' />
+        {{! init fonts }}
+        <link rel='preconnect' href='https://fonts.googleapis.com' />
+        <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+        <link
+            href='https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600&display=swap'
+            rel='stylesheet'
+        />
+    </head>
 
-<body>
-    <header class="jumbotron jumbotron-fluid">
-      <div class="container">
-        <h1 class="display-4 font-weight-bold">
-          <a id="logo" href="/user">Budgetek</a>
-        </h1>
-        <p class="lead font-weight-bold">A place to budget out your world!</p>
-        <nav>
-          {{#if loggedIn}}
-          <button class="btn btn-secondary float-right" id="logout">Logout</button>
-          {{/if}}
-        </nav>
-      </div>
-    </header>
-    <main>
-      {{{ body }}}
-    </main>
-    <footer>
-    </footer>
-  {{!-- init bootstrap js --}}
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
-  {{#if loggedIn}}
-  <script src="/javascript/logout.js"></script>
-  {{/if}}
-</body>
+    <body>
+        <header class='jumbotron jumbotron-fluid'>
+            <div class='container'>
+                <h1 class='display-4 font-weight-bold'>
+                    <a id='logo' href='/user'>Budgetek</a>
+                </h1>
+                <p class='lead font-weight-bold'>A place to budget out your
+                    world!</p>
+                <nav>
+                    {{#if loggedIn}}
+                        <button
+                            class='btn btn-secondary float-right'
+                            id='logout'
+                        >Logout</button>
+                    {{/if}}
+                </nav>
+            </div>
+        </header>
+        <main>
+            {{{body}}}
+        </main>
+        <footer>
+        </footer>
+        {{! init bootstrap js }}
+        <script
+            src='https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js'
+            integrity='sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj'
+            crossorigin='anonymous'
+        ></script>
+        <script
+            src='https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js'
+            integrity='sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF'
+            crossorigin='anonymous'
+        ></script>
+        {{#if loggedIn}}
+            <script src='/javascript/logout.js'></script>
+        {{/if}}
+    </body>
 
 </html>

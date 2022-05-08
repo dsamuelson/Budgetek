@@ -1,52 +1,99 @@
-<div class="row">
-    <div class="col">
-        <h4 class="list-title">Your Income</h4>
-        <hr>
-        <ul id="incomes-list">
+<div class='row'>
+    <div class='col'>
+        <h4 class='list-title'>Your Income</h4>
+        <hr />
+        <ul id='incomes-list'>
             {{#each this}}
                 <li>
-                    <p class="income-list-title">{{title}} ({{frequency}})</p><br>
-                    <span class="pay">{{pay}}</span>
-                    <button data-id="{{id}}" id="delete-income" title="Delete income">X</button>
+                    <p class='income-list-title'>{{title}}
+                        ({{frequency}})</p><br />
+                    <span class='pay'>{{pay}}</span>
+                    <button
+                        data-id='{{id}}'
+                        id='delete-income'
+                        title='Delete income'
+                    >X</button>
                 </li>
             {{/each}}
         </ul>
     </div>
-    <div class="col">
-        <div id="form-display">
-            <form class="addIncomeForm">
-                <div class="form-group">
-                    <label class="font-weight-bold" for="income-name">Name of Income:</label><br>
-                    <input type="text" class="form-control" name="income-name" id="income-name">
+    <div class='col'>
+        <div id='form-display'>
+            <form class='addIncomeForm'>
+                <div class='form-group'>
+                    <label class='font-weight-bold' for='income-name'>Name of
+                        Income:</label><br />
+                    <input
+                        type='text'
+                        class='form-control'
+                        name='income-name'
+                        id='income-name'
+                    />
                 </div>
-                <div class="form-group">
-                    <label class="font-weight-bold" for="income-frequency">Frequency:</label><br>
-                    <select name="income-frequency" class="form-control" id="income-frequency">
-                        <option value="---" selected>---</option>
-                        <option value="once">Once</option>
-                        <option value="weekly">Weekly</option>
-                        <option value="biweekly">Biweekly</option>
-                        <option value="monthly">Monthly</option>
-                        <option value="annually">Annually</option>
+                <div class='form-group'>
+                    <label
+                        class='font-weight-bold'
+                        for='income-frequency'
+                    >Frequency:</label><br />
+                    <select
+                        name='income-frequency'
+                        class='form-control'
+                        id='income-frequency'
+                    >
+                        <option value='---' selected>---</option>
+                        <option value='once'>Once</option>
+                        <option value='weekly'>Weekly</option>
+                        <option value='biweekly'>Biweekly</option>
+                        <option value='monthly'>Monthly</option>
+                        <option value='annually'>Annually</option>
                     </select>
                 </div>
-                <div class="form-group">
-                    <label class="font-weight-bold" for="income-pay">Pay:</label><br>
-                    <input type="text" name="pay" class="form-control" id="income-pay">
+                <div class='form-group'>
+                    <label
+                        class='font-weight-bold'
+                        for='income-pay'
+                    >Pay:</label><br />
+                    <input
+                        type='text'
+                        name='pay'
+                        class='form-control'
+                        id='income-pay'
+                    />
                 </div>
-                <div class="form-group">
-                    <div id="income-priority" class="form-check form-check-inline">
-                        <div class="form-check-space">
-                            <input type="radio" class="form-check-input" name="priority" value="Primary" id="primary" />
-                            <label class="form-check-label" for="primary">Primary</label>
+                <div class='form-group'>
+                    <div
+                        id='income-priority'
+                        class='form-check form-check-inline'
+                    >
+                        <div class='form-check-space'>
+                            <input
+                                type='radio'
+                                class='form-check-input'
+                                name='priority'
+                                value='Primary'
+                                id='primary'
+                            />
+                            <label
+                                class='form-check-label'
+                                for='primary'
+                            >Primary</label>
                         </div>
-                        <div class="form-check-space">
-                            <input type="radio" class="form-check-input" name="priority" value="Secondary" id="secondary" />
-                            <label class="form-check-label" for="secondary">Secondary</label>
+                        <div class='form-check-space'>
+                            <input
+                                type='radio'
+                                class='form-check-input'
+                                name='priority'
+                                value='Secondary'
+                                id='secondary'
+                            />
+                            <label
+                                class='form-check-label'
+                                for='secondary'
+                            >Secondary</label>
                         </div>
                     </div>
                 </div>
-                <button class="btn btn-primary mb-2" type="submit">Add Income</button>
+                <button class='btn btn-primary mb-2' type='submit'>Add Income</button>
             </form>
         </div>
     </div>

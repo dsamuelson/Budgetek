@@ -1,14 +1,16 @@
 # Budgetek
+
 ![Unlicense badge](https://img.shields.io/badge/License-Unlicense-success)
+
 ## Table of Contents
 
-- [Description](#description)
-- [Contributors](#contributors)
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contact Information](#contact)
-- [License](#license)
+-   [Description](#description)
+-   [Contributors](#contributors)
+-   [Features](#features)
+-   [Installation](#installation)
+-   [Usage](#usage)
+-   [Contact Information](#contact)
+-   [License](#license)
 
 ## Deployed URL
 
@@ -22,7 +24,7 @@ When you start using this you will be taken to the login page, where you can fil
 
 ![login page](/assets/images/login-page.png)
 
- After logging in you will be taken to your budgeting dashboard
+After logging in you will be taken to your budgeting dashboard
 
 ![main dashboard](/assets/images/main-page.png)
 
@@ -30,11 +32,11 @@ Here you can input your incomes and whether that is a primary or secondary form 
 
 ![expenses and incomes](/assets/images/expense-income.png)
 
- If you have budgeting questions there is a forum as well where you can ask your questions anonymously and gain anonymous responses.
+If you have budgeting questions there is a forum as well where you can ask your questions anonymously and gain anonymous responses.
 
 ![forum page](/assets/images/forum-dash.png)
 
- We are working on making it more intuitive and useful for any sort of budgeting needs. Thank you very much for using our application!
+We are working on making it more intuitive and useful for any sort of budgeting needs. Thank you very much for using our application!
 
 ## Contributors
 
@@ -43,23 +45,23 @@ Ben Milner, Holdan McMullen, Eric Shumway
 
 ## Features
 
-- Easy to use
+-   Easy to use
 
-- looks amazing
+-   looks amazing
 
-- simple inputs and outputs
+-   simple inputs and outputs
 
-- intuitive without need for too much explanation
+-   intuitive without need for too much explanation
 
 ## Installation
 
-- project is deployed so you can use it on its heroku page
+-   project is deployed so you can use it on its heroku page
 
-- If you'd like you can clone the git repository and run npm install which will install all of the needed modules.
+-   If you'd like you can clone the git repository and run npm install which will install all of the needed modules.
 
-- This project uses .env to set up the connection to your mysql database, so be sure to add a .env file with DB_NAME, DB_USER and DB_PW equals fields so that it can instantiate the databases.
+-   This project uses .env to set up the connection to your mysql database, so be sure to add a .env file with DB_NAME, DB_USER and DB_PW equals fields so that it can instantiate the databases.
 
-- if you'd like you can use npm run seed to populate the database with necessary tables and mock information for testing
+-   if you'd like you can use npm run seed to populate the database with necessary tables and mock information for testing
 
 ## Usage
 
@@ -100,4 +102,3 @@ ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
 
 For more information, please refer to <https://unlicense.org>
-    
