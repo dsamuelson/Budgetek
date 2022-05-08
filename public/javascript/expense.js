@@ -64,5 +64,5 @@ document
   .addEventListener("submit", addExpense);
 
 document
-  .querySelector('#expenses-list')
+  .querySelector('#delete-expense')
   .addEventListener('click', deleteExpense);

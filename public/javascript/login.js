@@ -23,6 +23,26 @@ async function loginFormHandler(event) {
   }
 }
 
+// show signup
+function showSignup(event) {
+  event.preventDefault();
+  const element = document.querySelector("#signUpDisplay");
+  const login = document.querySelector(".login-form");
+  const loginTitle = document.querySelector(".login-title");
+  const secondCol = document.querySelector("#secondCol");
+
+  // apply changes to signup display
+  element.style.width = "100%";
+  element.style.display = "block";
+
+  // remove elements to display signup form
+  event.target.style.display = "none";
+  loginTitle.style.display = "none";
+  login.style.display = "none";
+  secondCol.style.display = "none";
+}
+
+
 // signup
 async function signupFormHandler(event) {
   event.preventDefault();
@@ -56,3 +76,6 @@ document
 document
   .querySelector(".signup-form")
   .addEventListener("submit", signupFormHandler);
+document
+  .querySelector("#showSignup")
+  .addEventListener("click", showSignup);

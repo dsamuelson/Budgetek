@@ -1,92 +1,252 @@
 :root {
     --black: #000;
+    --white: #fff;
+    --primary: #537060;
+    --secondary: #cecdca;
+    --teritary: #31393a;
+    --border-primary: #b9c5c6;
+    --border-secondary: #3c5449;
 }
+
+/* univseral selectors */
 
 * {
     padding: 0;
     margin: 0;
 }
 
+body {
+    background-color: var(--secondary);
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.btn:focus {
+    outline: none;
+    border: 0;
+    box-shadow: none;
+}
+
+/* scrollbar */
+#expenses-list::-webkit-scrollbar,
+#incomes-list::-webkit-scrollbar {
+    background-color: var(--white);
+    height: 5px;
+    width: 5px;
+}
+
+#expenses-list::-webkit-scrollbar-thumb,
+#incomes-list::-webkit-scrollbar-thumb {
+    background-color: var(--black);
+}
+
 /* header start */
-header {
-    border-bottom: 1px solid var(--black);
-    padding: 20px;
-    position: relative;
+.jumbotron {
+    background: url("../images/header-bg.jpg") no-repeat;
+    background-size: cover;
+    border-bottom: 10px groove var(--border-primary);
 }
-
 #logo {
-    margin: 20px;
+    color: var(--white);
+    text-shadow: 2px 4px 2px #537060, 2px 4px 2px #537060, 2px 4px 8px #537060, 2px 4px 2px #000, 2px 4px 2px #000;
+    font-family: 'Vazirmatn', sans-serif;
+}
+.lead {
+    color: var(--white);
+    text-shadow: 2px 4px 2px #537060, 2px 4px 2px #537060, 2px 4px 8px #537060, 2px 4px 2px #000, 2px 4px 2px #000;
 }
 
-nav {
-    float: right;
-    margin-right: 20px;
-    position: relative;
-    bottom: 25px;
+#logout {
+    background-color: var(--teritary);
+    border: none;
+    transition: 300ms;
+    width: 100px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 30px;
+}
+
+#logout:hover {
+    background-color: var(--white);
+    color: var(--black);
+    transition: 300ms;
 }
 /* header end */
 
-/* dashboard */
-.dashboard-header {
-    width: 70%;
-    margin: 0 auto;
+/* main start */
+.homepage {
+    height: 100%;
+    margin-top: 50px;
 }
+.homepage .col {
+    height: 100%;
+}
+/* main end */
 
-.dashboard-body {
-    margin-top: 20px;
+/* forms start */
+#signUpDisplay {
+    display: none;
+    transition: 500ms;
 }
-.column {
-    float: left;
-    width: 25%;
-    height: 400px;
-    padding: 20px;
+.login-form input,
+.signup-form input,
+.addExpenseForm input,
+.addIncomeForm input {
     border: 1px solid var(--black);
-}
-
-.money-section {
-    margin-top: 20px;
-}
-
-/* dashboard body start */
-#list {
-    border: 1px solid var(--black);
-    height: 400px;
     padding: 5px;
 }
-/* dashboard body end */
 
-/* expence/income form start */
-.addExpenseForm div,
-.addIncomeForm div {
-    margin-top: 10px;
+.signup-form {
+    margin: 0;
 }
 
-.addExpenseForm label,
-.addIncomeForm label {
-    font-weight: 700;
-}
-
-.addExpenseForm input,
-.addIncomeForm input,
-select {
-    width: 100%;
-    height: 20px;
-}
-
-.radio-display {
-    margin-bottom: 30px;
-}
-
-input[type="radio"] {
-    width: auto;
-    margin: 0 5px;
-}
-
-.radio-display label {
-    line-height: 1px;
+.login-form .btn,
+.signup-form .btn,
+.addExpenseForm button,
+.addIncomeForm button {
+    background-color: var(--primary);
+    border: none;
+    transition: 300ms;
+    outline: none;
 }
 
 .addExpenseForm button,
 .addIncomeForm button {
     width: 100%;
 }
+
+.addExpenseForm button:hover,
+.addIncomeForm button:hover {
+    background-color: var(--black);
+    color: var(--white);
+    transition: 300ms;
+    outline: none;
+}
+
+.login-form .btn:hover,
+.signup-form .btn:hover {
+    background-color: var(--white);
+    color: var(--black);
+    transition: 300ms;
+}
+
+.form-check-space {
+    margin-right: 15px;
+}
+
+#loginBtn {
+    width: 100px;
+}
+
+#signupBtn {
+    width: 50%;
+}
+
+#showSignup {
+    width: 150px;
+    margin-left: 10px;
+}
+/* forms end */
+
+/* dashboard body start */
+#dashboard-header {
+    position: relative;
+    bottom: -8px;
+}
+
+#dashboard-header .btn {
+    background-color: var(--primary);
+    border: none;
+    transition: 300ms;
+    width: 200px;
+    display: inline;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+#dashboard-header .btn:hover {
+    background-color: var(--white);
+    color: var(--black);
+    transition: 300ms;
+}
+
+#dashboard-header .btn:active {
+    border: 0;
+}
+
+.dashboard-body {
+    border: 5px solid var(--primary);
+    border-radius: 5px;
+}
+
+#moneyCol {
+    padding-top: 10px;
+}
+
+.money-section p {
+    background-color: #e0dede;
+    padding: 5px;
+    width: 200px;
+    font-weight: bold;
+}
+
+.list-title {
+    margin-top: 10px;
+}
+
+#expenses-list,
+#incomes-list {
+    height: 275px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: relative;
+    top: -15px;
+}
+
+#expenses-list li,
+#incomes-list li {
+    list-style: none;
+    background-color: #c0c0c0;
+    margin-top: 10px;
+    padding: 5px;
+}
+
+#delete-expense,
+#delete-income {
+    background-color: var(--primary);
+    color: var(--white);
+    border: 1px solid var(--border-secondary);
+    float: right;
+    width: 40px;
+    height: 25px;
+    line-height: 0;
+    position: relative;
+    bottom: 10px;
+    right: 10px;
+    transition: 300ms;
+}
+
+#delete-expense:hover,
+#delete-income:hover {
+    background-color: var(--white);
+    color: var(--black);
+    transition: 300ms;
+}
+
+.expense-list-title,
+.income-list-title {
+    font-weight: bold;
+    margin-bottom: -15px;
+}
+
+.pay,
+.cost {
+    background-color: var(--teritary);
+    color: var(--white);
+    padding: 5px;
+    font-weight: bold;
+}
+/* dashboard body end */

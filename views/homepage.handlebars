@@ -1,32 +1,40 @@
-<form class="login-form">
-    <div>
-        <label for="email-login">email:</label>
-        <input type="text" id="email-login">
+<div class="container homepage">
+  <div class="row">
+    <div class="col">
+      <h2 class="login-title">Login</h2>
+        <form class="login-form">
+            <div class="form-group mb-2">
+                <label class="sr-only" for="email-login">Email:</label>
+                <input type="text" class="form-control-plaintext" id="email-login" placeholder="email@example.com" required>
+            </div>
+            <div class="form-group">
+                <label class="sr-only" for="password-login">Password:</label>
+                <input type="password" class="form-control" id="password-login" placeholder="Password" required>
+            </div>
+            <button class="btn btn-primary mb-2" type="submit" id="loginBtn" title="Login">Login</button>
+            <button class="btn btn-primary mb-2" id="showSignup" title="Signup">Signup!</button>
+        </form>
     </div>
-    <div>
-        <label for="password-login">password:</label>
-        <input type="password" id="password-login">
+    <div id="secondCol" class="col">
+        <h4 id="secondCol-title">Wecome to Budgetek!</h4>
+        <p id="secondCol-info">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur nisi ex, magnam, alias perferendis accusantium iure voluptatem amet, ad et inventore blanditiis dolorum natus recusandae culpa neque atque! Inventore, dolore.</p>
     </div>
-    <div>
-        <button type="submit">login</button>
+  <form id="signUpDisplay" class="signup-form">
+    <h2>Please signup to start budgeting today!</h2>
+    <div class="form-group">
+      <label class="font-weight-bold" for="username-signup">Username:</label>
+      <input type="text" class="form-control" id="username-signup" required>
     </div>
-</form>
-<form class="signup-form">
-  <div>
-    <label for="username-signup">username:</label>
-    <input type="text" id="username-signup" />
-  </div>
-  <div>
-    <label for="email-signup">email:</label>
-    <input type="text" id="email-signup" />
-  </div>
-  <div>
-    <label for="password-signup">password:</label>
-    <input type="password" id="password-signup" />
-  </div>
-  <div>
-    <button type="submit">signup</button>
-  </div>
-</form>
+    <div class="form-group">
+      <label class="font-weight-bold" for="email-signup">Email:</label>
+      <input type="text" class="form-control" id="email-signup" required>
+    </div>
+    <div class="form-group">
+      <label class="font-weight-bold" for="password-signup">Password:</label>
+      <input type="password" class="form-control" id="password-signup" required>
+    </div>
+      <button class="btn btn-success" id="signupBtn" type="submit" title="Sign me in">Sign Me Up</button>
+  </form>
+</div>
 
 <script src="/javascript/login.js"></script>

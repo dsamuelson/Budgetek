@@ -1,23 +1,29 @@
-<div class="column">
+<div class="row">
+    <div class="col">
+        <h4 class="list-title">Your Expenses</h4>
+        <hr>
         <ul id="expenses-list">
             {{#if this}}
             {{#each this}}
-                <li>{{title}} ({{frequency}})<br>{{cost}}
-                <button data-id="{{id}}" id="delete-expense">Delete</button></li>
+                <li>
+                    <p class="expense-list-title">{{title}} ({{frequency}})</p><br>
+                    <span class="cost">{{cost}}</span>
+                    <button data-id="{{id}}" id="delete-expense" title="Delete expense">X</button>
+                </li>
             {{/each}}
             {{/if}}
         </ul>
     </div>
-    <div class="column">
+    <div class="col">
         <div id="form-display">
             <form class="addExpenseForm">
-                <div>
-                    <label for="expense-name">Name of Expense:</label><br>
-                    <input type="text" name="expense-name" id="expense-name">
+                <div class="form-group">
+                    <label class="font-weight-bold" for="expense-name">Name of Expense:</label><br>
+                    <input type="text" class="form-control" name="expense-name" id="expense-name">
                 </div>
-                <div>
-                    <label for="expense-frequency">Frequency:</label><br>
-                    <select name="expense-frequency" id="expense-frequency">
+                <div class="form-group">
+                    <label class="font-weight-bold" for="expense-frequency">Frequency:</label><br>
+                    <select name="expense-frequency" class="form-control" id="expense-frequency">
                         <option value="---" selected>---</option>
                         <option value="once">Once</option>
                         <option value="weekly">Weekly</option>
@@ -28,21 +34,24 @@
                         <option value="annually">Annually</option>
                     </select>
                 </div>
-                <div>
-                    <label for="expense-cost">Cost:</label><br>
-                    <input type="text" name="cost" id="expense-cost">
+                <div class="form-group">
+                    <label class="font-weight-bold" for="expense-cost">Cost:</label><br>
+                    <input type="text" name="cost" class="form-control" id="expense-cost">
                 </div>
-                <div>
-                <div id="expense-priority" class="radio-display">
-                    <input type="radio" class="radio" name="priority" value="vital" id="vital" />
-                    <label for="vital">Vital</label>
-                    <input type="radio" class="radio" name="priority" value="non-vital" id="non-vital" />
-                    <label for="non-vital">Non-vital</label>
+                <div class="form-group">
+                    <div id="expense-priority" class="form-check form-check-inline">
+                        <div class="form-check-space">
+                            <input type="radio" class="form-check-input" name="priority" value="vital" id="vital" />
+                            <label class="form-check-label" for="vital">Vital</label>
+                        </div>
+                        <div class="form-check-space">
+                            <input type="radio" class="form-check-input" name="priority" value="non-vital" id="non-vital" />
+                            <label class="form-check-label" for="non-vital">Non-vital</label>
+                        </div>
+                    </div>
                 </div>
-                </div>
-                <div>
-                    <button type="submit">Add Expense</button>
-                </div>
+                <button class="btn btn-primary mb-2" type="submit">Add Expense</button>
             </form>
         </div>
     </div>
+</div>

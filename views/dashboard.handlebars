@@ -1,44 +1,45 @@
-{{!-- incomes,
-        expenses,
-        user,
-        loggedIn --}}
-<div class="dashboard-header">
-    <button id="showExpense">Show Expenses</button>
-    <button id="showIncome">Show Income</button>
-    <button id="gotoForum">Ask Forum</button>
+<div class="container" id="dashboard-header">
+    <h2>Your Dashboard</h2><br>
+    <button class="btn btn-primary mb-2" id="showExpense">Show Expenses</button>
+    <button class="btn btn-primary mb-2" id="showIncome">Show Income</button>
+    <button class="btn btn-primary mb-2 float-right" id="gotoForum">Ask Forum</button>
 </div>
-<div class="dashboard-body">
-    <div class="column">
-        <div class="money-section">
-            <h2>Incoming</h2>
-            {{#if incomes.0.total_pay}}
-            <p id="total-incomes">{{incomes.0.total_pay}}</p>
-            {{/if}}
-        </div>
-        <div class="money-section">
-            <h2>Outgoing</h2>
-            {{#if expenses.0.total_bills}}
-            <p id="total-expenses">{{expenses.0.total_bills}}</p>
-            {{/if}}
-        </div>
-        <div class="money-section">
-            <h2>Difference</h2>
-            {{#if budgetDiff}}
-            <p id="difference">{{budgetDiff}}</p>
-            {{/if}}
-        </div>
-    </div>
 
-    <div id="user-id" hidden>{{userId}}</div>
-    
-    <div id="expenses" hidden>
-        {{> expenses-form expenses}}
+<div class="dashboard-body container">
+    <div class="row">
+        <div id="moneyCol" class="col-sm-3">
+            <div class="money-section">
+                <h2>Incoming</h2>
+                {{#if incomes.0.total_pay}}
+                <p id="total-incomes">{{incomes.0.total_pay}}</p>
+                {{/if}}
+            </div>
+            <div class="money-section">
+                <h2>Outgoing</h2>
+                {{#if expenses.0.total_bills}}
+                <p id="total-expenses">{{expenses.0.total_bills}}</p>
+                {{/if}}
+            </div>
+            <div class="money-section">
+                <h2>Difference</h2>
+                {{#if budgetDiff}}
+                <p id="difference">{{budgetDiff}}</p>
+                {{/if}}
+            </div>
+        </div>
+
+        <div class="col-sm-9">
+            <div id="user-id" hidden>{{userId}}</div>
+            
+            <div id="expenses" hidden>
+                {{> expenses-form expenses}}
+            </div>
+            
+            <div id="incomes" hidden>
+                {{> incomes-form incomes}}
+            </div>
+        </div>
     </div>
-    
-    <div id="incomes" hidden>
-        {{> incomes-form incomes}}
-    </div>
-    
 </div>
 
 <script src="/javascript/showPartial.js"></script>
