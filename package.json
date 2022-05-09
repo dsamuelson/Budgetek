@@ -32,6 +32,8 @@
         "sequelize": "^6.19.0"
     },
     "devDependencies": {
+        "eslint": "^8.15.0",
+        "eslint-config-prettier": "^8.5.0",
         "jest": "^25.1.0"
     }
 }
