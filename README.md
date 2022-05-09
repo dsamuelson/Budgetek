@@ -40,7 +40,7 @@ We are working on making it more intuitive and useful for any sort of budgeting 
 
 ## Contributors
 
-David Samuelson
+David Samuelson,
 Ben Milner, Holdan McMullen, Eric Shumway
 
 ## Features
@@ -65,7 +65,7 @@ Ben Milner, Holdan McMullen, Eric Shumway
 
 ## Usage
 
--Usage is pretty simple just run npm start and go to localhost:3001 and it should start with a login screen
+- Usage is pretty simple just run npm start and go to localhost:3001 and it should start with a login screen
 
 ## Contact
 
