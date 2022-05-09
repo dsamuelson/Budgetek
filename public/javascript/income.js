@@ -60,4 +60,4 @@ async function deleteIncome(event) {
 
 document.querySelector('.addIncomeForm').addEventListener('submit', addIncome)
 
-document.querySelector('#delete-income').addEventListener('click', deleteIncome)
+document.querySelector('#incomes-list').addEventListener('click', deleteIncome);

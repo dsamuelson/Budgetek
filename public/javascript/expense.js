@@ -47,6 +47,8 @@ async function addExpense(event) {
 async function deleteExpense(event) {
     event.preventDefault()
 
+    console.log('pressed')
+
     const expenseId = event.target.getAttribute('data-id')
 
     const response = await fetch(`/api/expense/${expenseId}`, {
@@ -61,6 +63,4 @@ async function deleteExpense(event) {
 
 document.querySelector('.addExpenseForm').addEventListener('submit', addExpense)
 
-document
-    .querySelector('#delete-expense')
-    .addEventListener('click', deleteExpense)
+document.querySelector('#expenses-list').addEventListener('click', deleteExpense)
